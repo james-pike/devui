@@ -69,7 +69,7 @@ export default component$(() => {
   const progressIndex = useComputed$(() => selectedIndex.value);
 
   return (
-    <Carousel.Root class="carousel-root w-full pt-4 px-3" gap={30} bind:selectedIndex={selectedIndex}>
+    <Carousel.Root class="carousel-root w-full pt-4" gap={30} bind:selectedIndex={selectedIndex}>
       <div class="flex flex-row items-start w-full">
         {/* Vertical progress line */}
         <div class="flex flex-col items-center justify-start w-2 mr-3">
