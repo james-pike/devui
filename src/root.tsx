@@ -110,13 +110,10 @@ export default component$(() => {
           <div class="relative md:border-x mx-auto max-w-7xl overflow-x-hidden">
         
             <div
-              class="absolute inset-0 z-[-1] bg-gradient-to-br from-background via-bg-white/10 to-background"
+              class="absolute inset-0 z-[-1] bg-gradient-to-br from-background via-background/80 to-background"
               aria-hidden="true"
             ></div>
-            <div
-              class="absolute inset-0 z-[-1] bg-gradient-to-t from-tertiary-300/40 via-primary-200/50 to-primary-100/60"
-              aria-hidden="true"
-            ></div>
+           
             <div
               class="absolute top-0 left-5 w-[700px] h-[800px] z-[-1]  rounded-full blur-xl animate-float"
               aria-hidden="true"
@@ -126,7 +123,7 @@ export default component$(() => {
               aria-hidden="true"
             ></div>
             <div
-              class="absolute top-5 md:left-[650px] w-[490px] h-[80px] z-[-1] bg-white/50 rounded-full blur-xl animate-float"
+              class="absolute top-5 md:left-[650px] w-[490px] h-[80px] z-[-1]  rounded-full blur-xl animate-float"
               aria-hidden="true"
             ></div>
             <RouterOutlet />
