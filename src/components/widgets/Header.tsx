@@ -2,6 +2,7 @@ import { component$, useStore, useVisibleTask$, useSignal } from "@builder.io/qw
 import { useLocation } from "@builder.io/qwik-city";
 import IconChevronDown from "../icons/IconChevronDown";
 import MenuModal from "./MenuModal";
+import Custom from "./Custom";
 
 export default component$(() => {
   const store = useStore({
@@ -92,7 +93,7 @@ export default component$(() => {
                 <>
                   {store.isMobile && isHomeRoute && (
                     <img
-                      src="/images/logo2-cropped.svg"
+                      src=""
                       alt="Logo Cropped"
                       class={{
                         "absolute top-1 left-1 w-[40px] h-[40px] object-contain transition-all duration-500 ease-in-out": true,
@@ -102,7 +103,7 @@ export default component$(() => {
                     />
                   )}
                   <img
-                    src="/images/logo22.svg"
+                    src=""
                     alt="Logo"
                     class={{
                       "absolute top-1 -left-1 w-[100px] h-[40px] object-contain": true,
@@ -115,7 +116,9 @@ export default component$(() => {
               )}
             </div>
           </a>
+           <Custom/>
           <div class="flex items-center md:hidden gap-1">
+             
             <MenuModal />
           </div>
         </div>

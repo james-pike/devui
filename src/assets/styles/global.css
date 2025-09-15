@@ -6,25 +6,19 @@
 @layer base {
 
   * {
-  border-color: hsl(var(--border));
-}
+    @apply border-border;
+  }
+  body {
+    @apply bg-background font-sans text-foreground;
+  }
 
-body {
-  background-color: hsl(var(--background));
-  font-family: ui-sans-serif, system-ui, sans-serif;
-  color: hsl(var(--foreground));
-}
+  p code {
+    @apply rounded-sm border-b-2 bg-accent px-2 py-0.5;
+  }
 
-p code {
-  border-radius: 0.125rem;
-  border-bottom-width: 2px;
-  background-color: hsl(var(--accent));
-  padding: 0.125rem 0.5rem;
-}
-
-pre code {
-  white-space: pre-wrap;
-}
+  pre code {
+    @apply whitespace-pre-wrap;
+  }
 
   :root {
     --border-width: 0px;

@@ -108,12 +108,9 @@ export default component$(() => {
         >
           <Header />
           <div class="relative md:border-x mx-auto max-w-7xl overflow-x-hidden">
+        
             <div
-              class="absolute inset-0 z-[-1] bg-watercolor-texture opacity-50 bg-secondary-100/50"
-              aria-hidden="true"
-            ></div>
-            <div
-              class="absolute inset-0 z-[-1] bg-gradient-to-br from-primary-100/95 via-primary-200/80 to-tertiary-200/85"
+              class="absolute inset-0 z-[-1] bg-gradient-to-br from-background via-bg-white/10 to-background"
               aria-hidden="true"
             ></div>
             <div
@@ -121,7 +118,7 @@ export default component$(() => {
               aria-hidden="true"
             ></div>
             <div
-              class="absolute top-0 left-5 w-[700px] h-[800px] z-[-1] bg-tertiary-100/30 rounded-full blur-xl animate-float"
+              class="absolute top-0 left-5 w-[700px] h-[800px] z-[-1]  rounded-full blur-xl animate-float"
               aria-hidden="true"
             ></div>
             <div
@@ -129,7 +126,7 @@ export default component$(() => {
               aria-hidden="true"
             ></div>
             <div
-              class="absolute top-5 md:left-[650px] w-[490px] h-[80px] z-[-1] bg-primary-200/30 rounded-full blur-xl animate-float"
+              class="absolute top-5 md:left-[650px] w-[490px] h-[80px] z-[-1] bg-white/50 rounded-full blur-xl animate-float"
               aria-hidden="true"
             ></div>
             <RouterOutlet />
