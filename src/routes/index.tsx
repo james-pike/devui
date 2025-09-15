@@ -3,6 +3,7 @@ import { type DocumentHead } from "@builder.io/qwik-city";
 import { SITE } from "~/config.mjs";
 import VerticalStepper from "~/components/widgets/vertical-stepper";
 import MultipleSlides from "~/components/widgets/MultipleSlides";
+import Reviews from "~/components/widgets/Reviews";
 
 
 export default component$(() => {
@@ -11,7 +12,7 @@ export default component$(() => {
       
     <MultipleSlides/>
     <VerticalStepper/>
-      
+      <Reviews/>
     </>
   );
 });
