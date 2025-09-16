@@ -1,18 +1,13 @@
 import { component$, type PropsOf, Slot } from '@builder.io/qwik';
 import { cn } from '@qwik-ui/utils';
 
-
-
 const Root = component$<PropsOf<'div'>>((props) => {
-  const {...restProps } = props;
-
   return (
     <div
-      {...restProps}
+      {...props}
       class={cn(
-        'rounded-base border bg-[#F8F6F2] text-card-foreground shadow-lg',
-     // Conditional background
-        props.class
+        'rounded-base border bg-card text-card-foreground shadow-sm',
+        props.class,
       )}
     >
       <Slot />
@@ -22,7 +17,7 @@ const Root = component$<PropsOf<'div'>>((props) => {
 
 const Header = component$<PropsOf<'div'>>((props) => {
   return (
-    <div {...props} class={cn('flex flex-col space-y-1.5 p-4 ', props.class)}>
+    <div {...props} class={cn('flex flex-col space-y-1.5 p-6', props.class)}>
       <Slot />
     </div>
   );
@@ -62,7 +57,7 @@ const Footer = component$<PropsOf<'div'>>(({ ...props }) => {
 
 // Experimental API
 const Image = component$<PropsOf<'img'>>(({ ...props }) => {
-  return <img {...props} class={cn('w-full rounded-t object-cover', props.class)} />;
+  return <img {...props} class={cn('w-full object-cover', props.class)} />;
 });
 
 export const Card = {

@@ -8,7 +8,8 @@ export default component$(() => {
         <p class="text-sm text-muted-foreground">Our process from start to finish.</p>
       </div>
       <Separator class="mt-3 mb-4" />
-      {/* <div class="flex h-5 items-center space-x-4 text-sm">
+   
+   {/* <div class="flex h-5 items-center space-x-4 text-sm">
         <div>Customizable</div>
         <Separator orientation="vertical" />
         <div>Accessible</div>
@@ -18,3 +19,6 @@ export default component$(() => {
     </div>
   );
 });
+
+
+

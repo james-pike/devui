@@ -140,9 +140,9 @@ export default component$(() => {
       ],
     },
     {
-      title: "Classes",
-      href: "/classes/",
-      hasSubmenu: true,
+      title: "Our Process",
+      href: "/process/",
+      hasSubmenu: false,
       subitems: [
         { title: "Our Offerings", href: "/classes" },
         { title: "Gift Cards", href: "https://bookeo.com/earthenvessels/buyvoucher" },

@@ -5,11 +5,13 @@ import VerticalStepper from "~/components/widgets/vertical-stepper";
 import MultipleSlides from "~/components/widgets/MultipleSlides";
 import Reviews from "~/components/widgets/Reviews";
 import FAQAccordion from "~/components/widgets/FAQAccordion";
+import Services from "~/components/widgets/Services";
 
 
 export default component$(() => {
   return (
     <>
+    <Services/>
       <VerticalStepper/>
     <MultipleSlides/>
     

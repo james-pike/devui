@@ -5,7 +5,6 @@
 
 .carousel-slide {
   border: 1px dotted hsl(var(--primary));
-  min-height: 12rem;
   /* max-height: 10rem; */
   -webkit-user-select: none; /* support for Safari */
   user-select: none;
