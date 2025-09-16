@@ -5,7 +5,6 @@ import { Label } from '../ui/Label';
 import { Input } from '../ui/Input';
 import { Button } from '../ui/Button';
 import Custom from './Custom';
-import PortfolioHeading from './PortfolioHeading';
 
 export default component$(() => {
   return (
