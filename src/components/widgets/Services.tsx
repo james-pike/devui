@@ -3,7 +3,6 @@ import { component$,  useStyles$ } from '@builder.io/qwik';
 import { Wrapper } from './Wrapper';
 
 import styles from './carousel.css?inline';
-import { Separator } from '../ui/Separator';
 import ServicesTabs from './ServicesTabs';
 import { Card } from '../ui/Card';
 

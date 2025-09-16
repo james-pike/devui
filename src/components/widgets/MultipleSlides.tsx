@@ -39,17 +39,21 @@ export default component$(() => {
     <>
     <PortfolioHeading/>
     <Carousel.Root
-      class="carousel-root"
+      class="carousel-root "
       slidesPerView={slidesPerViewSig.value}
       gap={30}
       autoPlayIntervalMs={5500}
       bind:autoplay={isPlaying}
     >
-      <Carousel.Scroller class="carousel-scroller">
+      <Carousel.Scroller class="carousel-scroller !border-none">
         {colors.map((color) => (
-          <Carousel.Slide key={color} class="carousel-slide bg-primary/10">
-            {color}
-          </Carousel.Slide>
+          <>
+        <Carousel.Slide key={color} class="carousel-slide">
+  <Card.Root class="p-1 bg-primary/10 min-h-36">
+    {color}
+  </Card.Root>
+</Carousel.Slide>
+          </>
         ))}
       </Carousel.Scroller>
       <div class="-mt-2 flex items-center justify-between gap-4">
@@ -76,4 +80,5 @@ export default component$(() => {
 // internal
 import styles from './carousel.css?inline';
 import { LuArrowLeft, LuArrowRight } from '@qwikest/icons/lucide';import PortfolioHeading from './PortfolioHeading';
+import { Card } from '../ui/Card';
 

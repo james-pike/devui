@@ -146,11 +146,10 @@ export default component$<PropsOf<typeof Button>>(() => {
   return (
  
         <>
-        <header class="flex w-full">
-    </header><div class="mb-2 mt-8 py-4">
+   
  
 
-        <label class="mb-1 mt-8 block font-medium">Base</label>
+        <label class="mb-1 mt-1 block font-medium">Base</label>
         <div class="flex">
           {Object.values(ThemeBaseColors).map((baseColor: string) => {
             const isActive = themeComputedObjectSig.value.baseColor === baseColor;
@@ -536,7 +535,7 @@ export default component$<PropsOf<typeof Button>>(() => {
 
                <label class="mb-1 block font-medium">Preset</label>
         <select
-          class="h-12 w-full rounded-base border bg-background p-2"
+          class="h-12 w-full rounded-base border p-2"
           value={themeComputedObjectSig.value.style}
           onChange$={async (e, el) => {
             // Update font based on style
@@ -569,8 +568,9 @@ export default component$<PropsOf<typeof Button>>(() => {
               const newMode = themeComputedObjectSig.value.mode === 'dark' ? 'light' : 'dark';
               updateThemeProperty('mode', newMode);
             } } />
-        </div>
-      </div><footer class="flex w-full justify-between gap-4">
+        </div> 
+
+      <footer class="flex w-full justify-between gap-4">
         <Button
           look="ghost"
           onClick$={() => {
