@@ -1,7 +1,6 @@
-import { component$, useSignal, useComputed$, useStyles$ } from '@builder.io/qwik';
+import { component$,  useStyles$ } from '@builder.io/qwik';
 
 import { Wrapper } from './Wrapper';
-import Heading from './Heading';
 
 import styles from './carousel.css?inline';
 import { Separator } from '../ui/Separator';
