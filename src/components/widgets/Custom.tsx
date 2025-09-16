@@ -14,6 +14,7 @@ import { ThemePrimaryColors } from '~/lib/themes/theme-primary-colors';
 import { ThemeStyles } from '~/lib/themes/theme-styles';
 import { cn } from '@qwik-ui/utils';
 import { Button,  } from '../ui/Button';
+import PortfolioHeading from './PortfolioHeading';
 
 const parseThemeString = (themeString: string): ThemeConfig => {
   const themeArray = themeString.split(' ');
@@ -148,38 +149,10 @@ export default component$<PropsOf<typeof Button>>(() => {
         <>
    
  
+    <PortfolioHeading/>
+      
 
-        <label class="mb-1 mt-1 block font-medium">Base</label>
-        <div class="flex">
-          {Object.values(ThemeBaseColors).map((baseColor: string) => {
-            const isActive = themeComputedObjectSig.value.baseColor === baseColor;
-
-            return (
-              <Button
-                key={baseColor}
-                look="ghost"
-                size="icon"
-                onClick$={() => updateThemeProperty('baseColor', baseColor)}
-                class={cn(
-                  'flex h-3 w-3 items-center justify-center rounded-none',
-                  isActive && 'border-2 border-ring'
-                )}
-              >
-                <span
-                  class={cn(
-                    'flex h-[10px] w-[10px] shrink-0 rounded-none',
-                    baseColor === 'base-slate' && 'bg-slate-500',
-                    baseColor === 'base-gray' && 'bg-gray-500',
-                    baseColor === 'base-neutral' && 'bg-neutral-500',
-                    baseColor === 'base-zinc' && 'bg-zinc-500',
-                    baseColor === 'base-stone' && 'bg-stone-500'
-                  )} />
-              </Button>
-            );
-          })}
-        </div>
-
-        <label class="mb-1 mt-8 block font-medium">Primary</label>
+        {/* <label class="mb-1 mt-8 block font-medium">Primary</label> */}
         <div class="flex justify-end">
           <div class="grid grid-cols-[repeat(22,0fr)]">
             {Object.values(ThemePrimaryColors).map((primaryColor: string) => {
@@ -508,6 +481,36 @@ export default component$<PropsOf<typeof Button>>(() => {
               );
             })}
           </div>
+        </div>
+
+          <label class="mb-1 mt-1 block font-medium">Base</label>
+        <div class="flex">
+          {Object.values(ThemeBaseColors).map((baseColor: string) => {
+            const isActive = themeComputedObjectSig.value.baseColor === baseColor;
+
+            return (
+              <Button
+                key={baseColor}
+                look="ghost"
+                size="icon"
+                onClick$={() => updateThemeProperty('baseColor', baseColor)}
+                class={cn(
+                  'flex h-3 w-3 items-center justify-center rounded-none',
+                  isActive && 'border-2 border-ring'
+                )}
+              >
+                <span
+                  class={cn(
+                    'flex h-[10px] w-[10px] shrink-0 rounded-none',
+                    baseColor === 'base-slate' && 'bg-slate-500',
+                    baseColor === 'base-gray' && 'bg-gray-500',
+                    baseColor === 'base-neutral' && 'bg-neutral-500',
+                    baseColor === 'base-zinc' && 'bg-zinc-500',
+                    baseColor === 'base-stone' && 'bg-stone-500'
+                  )} />
+              </Button>
+            );
+          })}
         </div>
 
         <div>

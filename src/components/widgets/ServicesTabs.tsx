@@ -5,6 +5,7 @@ import { Label } from '../ui/Label';
 import { Input } from '../ui/Input';
 import { Button } from '../ui/Button';
 import Custom from './Custom';
+import PortfolioHeading from './PortfolioHeading';
 
 export default component$(() => {
   return (
@@ -15,11 +16,9 @@ export default component$(() => {
         <Tabs.Tab>Marketing</Tabs.Tab>
       </Tabs.List>
       <Tabs.Panel>
-        <Card.Root class="!bg-primary/5">
-          <Card.Header>
-       
-          </Card.Header>
-          <Card.Content class="space-y-2 !bg-white/10">
+        <Card.Root class="!bg-primary/5 pt-2">
+   
+          <Card.Content class="space-y-2 !bg-white/10 p-5">
           <Custom/>
           </Card.Content>
           <Card.Footer>

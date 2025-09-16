@@ -15,12 +15,12 @@ export default component$(() => {
     <>
       <Wrapper>
     
-    <Card.Root>
-        <Card.Header>
-<Card.Title>
+    <Card.Root class="bg-primary/5">
+        <Card.Header class="bg-white/10 text-center">
+<Card.Title class="text-xl">
 Our Services
     </Card.Title>
-    <Card.Description>
+    <Card.Description class="text-lg">
 Premium web design, development, branding and marketing.
     </Card.Description>
 
