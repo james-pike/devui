@@ -1,7 +1,6 @@
 import { component$, useStore, useVisibleTask$, useSignal } from "@builder.io/qwik";
 import { useLocation } from "@builder.io/qwik-city";
 import IconChevronDown from "../icons/IconChevronDown";
-import MenuModal from "./MenuModal";
 import Custom from "./Custom";
 
 export default component$(() => {
@@ -119,7 +118,7 @@ export default component$(() => {
            <Custom/>
           <div class="flex items-center md:hidden gap-1">
              
-            <MenuModal />
+            {/* <MenuModal /> */}
           </div>
         </div>
         <nav

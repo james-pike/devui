@@ -1,6 +1,5 @@
 import { $, PropsOf, component$, useComputed$, useVisibleTask$ } from '@builder.io/qwik';
 
-import { LuSlidersHorizontal, LuX } from '@qwikest/icons/lucide';
 
 
 import { useAppState } from '~/_state/use-app-state';
@@ -14,8 +13,7 @@ import { ThemeBorderRadiuses } from '~/lib/themes/theme-border-radiuses';
 import { ThemePrimaryColors } from '~/lib/themes/theme-primary-colors';
 import { ThemeStyles } from '~/lib/themes/theme-styles';
 import { cn } from '@qwik-ui/utils';
-import { Button, buttonVariants } from '../ui/Button';
-import { Modal } from '../ui/Modal';
+import { Button,  } from '../ui/Button';
 
 const parseThemeString = (themeString: string): ThemeConfig => {
   const themeArray = themeString.split(' ');
