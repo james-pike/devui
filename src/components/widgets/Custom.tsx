@@ -147,33 +147,8 @@ export default component$<PropsOf<typeof Button>>(() => {
  
         <>
         <header class="flex w-full">
-      <h2 class="justify-self-start text-lg font-bold">Edit Profile</h2>
     </header><div class="mb-2 mt-8 py-4">
-        <label class="mb-1 block font-medium">Preset</label>
-        <select
-          class="h-12 w-full rounded-base border bg-background p-2"
-          value={themeComputedObjectSig.value.style}
-          onChange$={async (e, el) => {
-            // Update font based on style
-            let newFont = themeComputedObjectSig.value.font;
-            if (el.value === 'brutalist') {
-              newFont = ThemeFonts.MONO;
-            } else if (el.value === 'simple' || el.value === 'neumorphic') {
-              newFont = ThemeFonts.SANS;
-            }
-
-            await updateThemeProperty('style', el.value);
-            if (newFont !== themeComputedObjectSig.value.font) {
-              await updateThemeProperty('font', newFont);
-            }
-          } }
-        >
-          <option value={'simple'}>Simple</option>
-          <option value={'brutalist'}>Brutalist</option>
-          {rootStore.featureFlags?.showNeumorphic && (
-            <option value={'neumorphic'}>Neumorphic</option>
-          )}
-        </select>
+ 
 
         <label class="mb-1 mt-8 block font-medium">Base</label>
         <div class="flex">
@@ -558,6 +533,32 @@ export default component$<PropsOf<typeof Button>>(() => {
             })}
           </div>
         </div>
+
+               <label class="mb-1 block font-medium">Preset</label>
+        <select
+          class="h-12 w-full rounded-base border bg-background p-2"
+          value={themeComputedObjectSig.value.style}
+          onChange$={async (e, el) => {
+            // Update font based on style
+            let newFont = themeComputedObjectSig.value.font;
+            if (el.value === 'brutalist') {
+              newFont = ThemeFonts.MONO;
+            } else if (el.value === 'simple' || el.value === 'neumorphic') {
+              newFont = ThemeFonts.SANS;
+            }
+
+            await updateThemeProperty('style', el.value);
+            if (newFont !== themeComputedObjectSig.value.font) {
+              await updateThemeProperty('font', newFont);
+            }
+          } }
+        >
+          <option value={'simple'}>Simple</option>
+          <option value={'brutalist'}>Brutalist</option>
+          {rootStore.featureFlags?.showNeumorphic && (
+            <option value={'neumorphic'}>Neumorphic</option>
+          )}
+        </select>
 
         <div class="mt-8">
           Dark Mode{' '}

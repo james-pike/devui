@@ -5,6 +5,7 @@ import { Wrapper } from './Wrapper';
 import styles from './carousel.css?inline';
 import { Separator } from '../ui/Separator';
 import ServicesTabs from './ServicesTabs';
+import { Card } from '../ui/Card';
 
 export default component$(() => {
   useStyles$(styles);
@@ -14,16 +15,22 @@ export default component$(() => {
   return (
     <>
       <Wrapper>
-            <div>
-      <div class="space-y-1">
-        <h4 class="text-md font-medium leading-none">Our Services</h4>
-        <p class="text-sm text-muted-foreground">Premium web design, development, branding and marketing.</p>
-      </div>
-      <Separator class="mt-3 mb-4" />
+    
+    <Card.Root>
+        <Card.Header>
+<Card.Title>
+Our Services
+    </Card.Title>
+    <Card.Description>
+Premium web design, development, branding and marketing.
+    </Card.Description>
 
-  
-    </div>
+
+        </Card.Header>
+       
      <ServicesTabs/>
+  
+     </Card.Root>
       </Wrapper>
     </>
   );

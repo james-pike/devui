@@ -5,10 +5,11 @@ import { Label } from '../ui/Label';
 import { Input } from '../ui/Input';
 import { Button } from '../ui/Button';
 import Custom from './Custom';
+import { Separator } from '../ui/Separator';
 
 export default component$(() => {
   return (
-    <Tabs.Root class="max-w-[400px]">
+    <Tabs.Root class="">
       <Tabs.List class="grid w-full grid-cols-3">
         <Tabs.Tab>Design</Tabs.Tab>
         <Tabs.Tab>Development</Tabs.Tab>
@@ -17,10 +18,7 @@ export default component$(() => {
       <Tabs.Panel>
         <Card.Root>
           <Card.Header>
-            <Card.Title>Account</Card.Title>
-            <Card.Description>
-              Make changes to your account here. Click save when you're done.
-            </Card.Description>
+       
           </Card.Header>
           <Card.Content class="space-y-2">
           <Custom/>
@@ -48,9 +46,7 @@ export default component$(() => {
               <Input id="username" value="~peduarte" />
             </div>
           </Card.Content>
-          <Card.Footer>
-            <Button>Save changes</Button>
-          </Card.Footer>
+         
         </Card.Root>
       </Tabs.Panel>
       <Tabs.Panel>
