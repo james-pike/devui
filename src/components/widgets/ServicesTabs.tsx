@@ -4,6 +4,7 @@ import { Card } from '../ui/Card';
 import { Label } from '../ui/Label';
 import { Input } from '../ui/Input';
 import { Button } from '../ui/Button';
+import Custom from './Custom';
 
 export default component$(() => {
   return (
@@ -22,14 +23,7 @@ export default component$(() => {
             </Card.Description>
           </Card.Header>
           <Card.Content class="space-y-2">
-            <div class="space-y-1">
-              <Label for="name">Name</Label>
-              <Input id="name" value="Pedro Duarte" />
-            </div>
-            <div class="space-y-1">
-              <Label for="username">Username</Label>
-              <Input id="username" value="~peduarte" />
-            </div>
+          <Custom/>
           </Card.Content>
           <Card.Footer>
             <Button>Save changes</Button>
