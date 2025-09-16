@@ -15,7 +15,7 @@ export default component$(() => {
     <>
       <Wrapper>
     
-    <Card.Root class="bg-primary/5">
+    <Card.Root class="bg-primary/5 max-w-3xl mx-auto">
         <Card.Header class="bg-white/10 text-center">
 <Card.Title class="text-xl">
 Our Services

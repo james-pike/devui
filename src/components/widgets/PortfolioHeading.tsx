@@ -3,7 +3,7 @@ import { Separator } from '../ui/Separator';
 export default component$(() => {
   return (
     <div>
-      <div class="space-y-1">
+      <div class="space-y-1 pt-3">
         <h4 class="text-md font-medium leading-none">Design Services</h4>
         <p class="text-sm text-muted-foreground">Our designs explore color, font, styles, headings, vector graphics, animations, including a full design system.</p>
       </div>
