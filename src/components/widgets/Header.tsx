@@ -1,7 +1,6 @@
 import { component$, useStore, useVisibleTask$, useSignal } from "@builder.io/qwik";
 import { useLocation } from "@builder.io/qwik-city";
 import IconChevronDown from "../icons/IconChevronDown";
-import Custom from "./Custom";
 import MenuModal from "./MenuModal";
 
 export default component$(() => {
