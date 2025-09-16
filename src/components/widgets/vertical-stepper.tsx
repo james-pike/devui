@@ -69,8 +69,14 @@ export default component$(() => {
   const progressIndex = useComputed$(() => selectedIndex.value);
 
   return (
+    <>
+    <Wrapper>
+<Heading/>
     <Carousel.Root class="carousel-root w-full pt-4" gap={30} bind:selectedIndex={selectedIndex}>
-      <div class="flex flex-row items-start w-full">
+     <div class="flex flex-row gap-5 ">
+      <div class="w-1/3 rounded bg-primary/10 hidden md:block"/>
+
+      <div class="flex flex-row items-start md:w-1/2">
         {/* Vertical progress line */}
         <div class="flex flex-col items-center justify-start w-2 mr-3">
           {roadmapPhases.map((_, index) => (
@@ -141,9 +147,15 @@ export default component$(() => {
           ))}
         </Carousel.Stepper>
       </div>
+
+      </div>
     </Carousel.Root>
+    </Wrapper>
+    </>
   );
 });
 
 // internal
-import styles from './carousel.css?inline';
+import styles from './carousel.css?inline';import { Wrapper } from './Wrapper';
+import Heading from './Heading';
+

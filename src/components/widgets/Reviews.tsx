@@ -15,7 +15,7 @@ export default component$(() => {
 
     const updateSlidesPerView = () => {
       if (window.matchMedia('(min-width: 640px)').matches) {
-        slidesPerViewSig.value = 2.5; // Larger screens
+        slidesPerViewSig.value = 4; // Larger screens
       } else {
         slidesPerViewSig.value = 1; // Mobile
       }

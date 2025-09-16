@@ -1,6 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import About from "~/components/widgets/About";
+import VerticalStepper from "~/components/widgets/vertical-stepper";
 
 
 import { SITE } from "~/config.mjs";
@@ -8,10 +9,7 @@ import { SITE } from "~/config.mjs";
 export default component$(() => {
   return (
     <>
-    
- <About  
-
-    />
+<VerticalStepper/>
      
     </>
   );
