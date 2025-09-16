@@ -10,9 +10,9 @@ import FAQAccordion from "~/components/widgets/FAQAccordion";
 export default component$(() => {
   return (
     <>
-      
+      <VerticalStepper/>
     <MultipleSlides/>
-    <VerticalStepper/>
+    
       <Reviews/>
       <FAQAccordion/>
     </>

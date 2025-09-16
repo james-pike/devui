@@ -35,6 +35,9 @@ export default component$(() => {
   });
 
   return (
+
+    <>
+    <PortfolioHeading/>
     <Carousel.Root
       class="carousel-root"
       slidesPerView={slidesPerViewSig.value}
@@ -67,8 +70,10 @@ export default component$(() => {
         </div>
       </div>
     </Carousel.Root>
+    </>
   );
 });
 // internal
 import styles from './carousel.css?inline';
-import { LuArrowLeft, LuArrowRight } from '@qwikest/icons/lucide';
+import { LuArrowLeft, LuArrowRight } from '@qwikest/icons/lucide';import PortfolioHeading from './PortfolioHeading';
+

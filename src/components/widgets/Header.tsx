@@ -93,7 +93,7 @@ export default component$(() => {
                 <>
                   {store.isMobile && isHomeRoute && (
                     <img
-                      src=""
+                      src="/images/logo2-cropped.svg"
                       alt="Logo Cropped"
                       class={{
                         "absolute top-1 left-1 w-[40px] h-[40px] object-contain transition-all duration-500 ease-in-out": true,
@@ -103,7 +103,7 @@ export default component$(() => {
                     />
                   )}
                   <img
-                    src=""
+                    src="/images/logo22.svg"
                     alt="Logo"
                     class={{
                       "absolute top-1 -left-1 w-[100px] h-[40px] object-contain": true,

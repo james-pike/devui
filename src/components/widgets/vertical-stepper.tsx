@@ -72,7 +72,7 @@ export default component$(() => {
     <>
     <Wrapper>
 <Heading/>
-    <Carousel.Root class="carousel-root w-full pt-4" gap={30} bind:selectedIndex={selectedIndex}>
+    <Carousel.Root class="carousel-root w-full " gap={30} bind:selectedIndex={selectedIndex}>
      <div class="flex flex-row gap-5 ">
       <div class="w-1/3 rounded bg-primary/10 hidden md:block"/>
 
