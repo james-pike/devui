@@ -52,7 +52,7 @@ export default component$(() => {
       <Tabs.Panel class="">
         <Card.Root class="rounded-t-none border-none">
           <Card.Content class="space-y-2 p-5 ">
-
+<img src='/images/Web-Design.webp' class="h-40 w-full -mt-5 "></img>
             <Custom />
 
           </Card.Content>
@@ -64,6 +64,8 @@ export default component$(() => {
        <Tabs.Panel>
         <Card.Root class="!bg-primary/5 border-none rounded-t-none">
           <Card.Content class="space-y-2  p-5">
+            <img src='/images/software.webp' class="h-40 w-full -mt-5 "></img>
+
             <Custom />
           </Card.Content>
           <Card.Footer>
