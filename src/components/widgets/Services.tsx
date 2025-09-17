@@ -16,7 +16,7 @@ export default component$(() => {
       <Wrapper>
     
     <Card.Root class=" max-w-3xl mx-auto">
-        <Card.Header class=" text-center">
+        <Card.Header class=" text-center bg-primary/5">
 <Card.Title class="text-xl">
 Our Services
     </Card.Title>

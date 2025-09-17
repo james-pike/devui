@@ -50,7 +50,7 @@ export default component$(() => {
         </Tabs.Tab>
       </Tabs.List>
       <Tabs.Panel class="">
-        <Card.Root class="">
+        <Card.Root class="rounded-t-none border-none">
           <Card.Content class="space-y-2 p-5 ">
 
             <Custom />
@@ -62,7 +62,7 @@ export default component$(() => {
         </Card.Root>
       </Tabs.Panel>
        <Tabs.Panel>
-        <Card.Root class="!bg-primary/5">
+        <Card.Root class="!bg-primary/5 border-none rounded-t-none">
           <Card.Content class="space-y-2  p-5">
             <Custom />
           </Card.Content>
@@ -72,7 +72,7 @@ export default component$(() => {
         </Card.Root>
       </Tabs.Panel>
       <Tabs.Panel>
-        <Card.Root>
+        <Card.Root class="border-none rounded-t-none">
           <Card.Header>
             <Card.Title>Account</Card.Title>
             <Card.Description>
@@ -92,7 +92,7 @@ export default component$(() => {
         </Card.Root>
       </Tabs.Panel>
       <Tabs.Panel>
-        <Card.Root>
+        <Card.Root class="rounded-t-none border-none">
           <Card.Header>
             <Card.Title>Password</Card.Title>
             <Card.Description>
