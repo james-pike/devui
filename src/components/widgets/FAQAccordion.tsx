@@ -1,8 +1,7 @@
 import { component$ } from '@builder.io/qwik';
 import { Accordion } from '../ui/Accordion';
 import { Card } from '../ui/Card';
-import Heading from './Heading';
-import { Wrapper } from './Wrapper';
+
 
 export default component$(() => {
   return (

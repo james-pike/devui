@@ -4,7 +4,6 @@ import { Card } from '../ui/Card';
 import { Label } from '../ui/Label';
 import { Input } from '../ui/Input';
 import { Button } from '../ui/Button';
-import Custom from './Custom';
 import { LuBook, LuCode, LuPaintbrush } from '@qwikest/icons/lucide';
 import FAQAccordion from './FAQAccordion';
 
