@@ -49,10 +49,12 @@ export default component$(() => {
           </div>
         </Tabs.Tab>
       </Tabs.List>
-      <Tabs.Panel>
-        <Card.Root class="!bg-primary/5">
-          <Card.Content class="space-y-2 !bg-white/10 p-5">
+      <Tabs.Panel class="">
+        <Card.Root class="">
+          <Card.Content class="space-y-2 p-5 ">
+
             <Custom />
+
           </Card.Content>
           <Card.Footer>
             <Button class="w-full opacity-90">Save changes</Button>
@@ -61,7 +63,7 @@ export default component$(() => {
       </Tabs.Panel>
        <Tabs.Panel>
         <Card.Root class="!bg-primary/5">
-          <Card.Content class="space-y-2 !bg-white/10 p-5">
+          <Card.Content class="space-y-2  p-5">
             <Custom />
           </Card.Content>
           <Card.Footer>

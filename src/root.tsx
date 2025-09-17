@@ -110,7 +110,7 @@ export default component$(() => {
           <div class="relative md:border-x mx-auto max-w-7xl overflow-x-hidden">
         
             <div
-              class="absolute inset-0 z-[-1] bg-gradient-to-br from-primary/15 via-primary/5 to-primary/15 dark:from-background dark:via-background/80 dark:to-background"
+              class="absolute inset-0 z-[-1] bg-gradient-to-br from-background via-background/80 to-background"
               aria-hidden="true"
             ></div>
            

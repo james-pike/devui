@@ -1,6 +1,8 @@
 import { component$, Slot, type PropsOf } from '@builder.io/qwik';
+
 import { Accordion as HeadlessAccordion } from '@qwik-ui/headless';
 import { cn } from '@qwik-ui/utils';
+
 import { LuChevronDown } from '@qwikest/icons/lucide';
 
 const Root = (props: PropsOf<typeof HeadlessAccordion.Root>) => (
@@ -10,18 +12,8 @@ const Root = (props: PropsOf<typeof HeadlessAccordion.Root>) => (
 );
 
 const Item = component$<PropsOf<typeof HeadlessAccordion.Item>>((props) => {
-
   return (
-    <HeadlessAccordion.Item
-      {...props}
-      class={cn(
-        'border-b border-border',
-        // Apply bg-muted when open, bg-background when isDark is true
-        'data-[open]:bg-background',
-       
-        props.class
-      )}
-    >
+    <HeadlessAccordion.Item {...props} class={cn('border-b', props.class)}>
       <Slot />
     </HeadlessAccordion.Item>
   );
@@ -37,13 +29,11 @@ const Trigger = component$<
       <HeadlessAccordion.Trigger
         {...props}
         class={cn(
-          'flex flex-1 items-center py-4 text-sm font-medium transition-all hover:underline [&[data-open]]:text-primary [&[data-open]>svg]:rotate-180',
+          'flex flex-1 items-center justify-between py-4 text-sm font-medium transition-all hover:underline [&[data-open]>svg]:rotate-180',
           props.class,
         )}
       >
-        <div class="text-left flex-1">
-          <Slot />
-        </div>
+        <Slot />
         <LuChevronDown class="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200" />
       </HeadlessAccordion.Trigger>
     </HeadlessAccordion.Header>

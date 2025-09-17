@@ -51,7 +51,7 @@ const Tab = component$<TabsTabProps>((props) => {
       // Styles for selected state
       'data-[state=selected]:bg-background',
       // Base styles for all tabs
-      'bg-card',
+      '',
       // Rounding: only first and last tabs get rounded corners
       '[&:first-child]:rounded-l-base [&:last-child]:rounded-r-base',
       // Ensure middle tabs have no rounding
@@ -77,7 +77,7 @@ const Panel = component$<PropsOf<typeof HeadlessTabs.Panel>>((props) => {
     <HeadlessTabs.Panel
       {...props}
       class={cn(
-        ' ring-offset-background bg-card rounded-base border border-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
+        ' ring-offset-background  rounded-base border border-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
         props.class
       )}
     >

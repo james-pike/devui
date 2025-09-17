@@ -73,11 +73,11 @@ export default component$(() => {
   return (
     <>
       <Wrapper>
-        <Card.Root class="p-4 pt-6 bg-primary/5">
+        <Card.Root class="p-4 pt-6">
         <Heading />
         <Carousel.Root class="carousel-root" gap={30} bind:selectedIndex={selectedIndex}>
           <div class="flex flex-row gap-5">
-            <div class="w-1/3 rounded bg-primary/10 hidden md:block" />
+            <div class="w-1/3 rounded hidden md:block" />
 
             <div class="flex flex-row items-start md:w-1/2">
               {/* Vertical progress line */}
