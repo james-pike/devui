@@ -1,5 +1,5 @@
 import { component$, useSignal, useComputed$, useStyles$, useVisibleTask$ } from '@builder.io/qwik';
-import { Carousel } from '@qwik-ui/headless';
+import { Carousel, Separator } from '@qwik-ui/headless';
 import { cn } from '@qwik-ui/utils';
 import { Wrapper } from './Wrapper';
 import Heading from './Heading';
@@ -126,6 +126,14 @@ export default component$(() => {
       animation: fillProgress 3s linear forwards;
     }
     
+    .progress-separator.user-controlled {
+      background: hsl(var(--primary)) !important;
+    }
+    
+    .progress-separator.user-controlled::after {
+      display: none;
+    }
+    
     .progress-separator.completed {
       background: hsl(var(--primary)) !important;
     }
@@ -150,6 +158,7 @@ export default component$(() => {
   const isPlaying = useSignal<boolean>(false);
   const hasCompletedOneCycle = useSignal<boolean>(false);
   const currentStageStartTime = useSignal<number>(0);
+  const userHasInteracted = useSignal<boolean>(false);
 
   // Start autoplay when component becomes visible
   useVisibleTask$(() => {
@@ -162,8 +171,8 @@ export default component$(() => {
     track(() => selectedIndex.value);
     currentStageStartTime.value = Date.now();
     
-    // If we've reached the end (last slide) and we're playing
-    if (selectedIndex.value === roadmapPhases.length - 1 && isPlaying.value && !hasCompletedOneCycle.value) {
+    // If we've reached the end (last slide) and we're playing (not user-controlled)
+    if (selectedIndex.value === roadmapPhases.length - 1 && isPlaying.value && !hasCompletedOneCycle.value && !userHasInteracted.value) {
       // Set a timeout to go to first slide one more time, then stop
       setTimeout(() => {
         selectedIndex.value = 0;
@@ -266,11 +275,13 @@ export default component$(() => {
                     {index < roadmapPhases.length - 1 && (
                       <div
                         class={`progress-separator w-1 h-4 rounded-full ${
-                          progressIndex.value > index 
-                            ? 'completed' 
-                            : progressIndex.value === index && isPlaying.value
-                              ? 'active'
-                              : ''
+                          userHasInteracted.value 
+                            ? (progressIndex.value >= index ? 'user-controlled' : '')
+                            : progressIndex.value > index 
+                              ? 'completed' 
+                              : progressIndex.value === index && isPlaying.value
+                                ? 'active'
+                                : ''
                         }`}
                         style={{ transform: 'rotate(0deg)' }}
                         key={`separator-${index}`}
@@ -290,19 +301,22 @@ export default component$(() => {
                 {roadmapPhases.map((phase, index) => (
                   <>
                     <Carousel.Step
-                      class="carousel-step flex items-start justify-start cursor-pointer"
+                      class="flex items-start justify-start cursor-pointer"
                       key={`step-${index}`}
                       onClick$={() => {
                         console.log(`Clicked index: ${index}`); // Debug click
+                        userHasInteracted.value = true; // Mark as user-controlled
+                        isPlaying.value = false; // Stop autoplay
                         selectedIndex.value = index; // Manually update selected index
                       }}
                     >
                       <span
                         class={cn(
-                          'text-sm md:text-base -ml-2 font-medium px-3 py-1.5 rounded',
+                          'text-sm md:text-base font-medium px-3 py-1.5 rounded',
                           selectedIndex.value === index ? 'bg-primary text-white' : 'bg-transparent'
                         )}
                       >
+                       <span class="rounded-l-base bg-white/40 py-1 pl-2 -ml-2 mr-1.5 "> {phase.headline} </span>
                         {phase.title}
                         <span class="ml-1">{phase.icon}</span>
                       </span>
