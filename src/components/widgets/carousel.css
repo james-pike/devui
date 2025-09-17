@@ -106,3 +106,13 @@
 .carousel-animation {
   transition: 0.35s transform cubic-bezier(0.57, 0.16, 0.95, 0.67);
 }
+
+.progress-separator::after {
+  height: 0%;                    /* Starts empty */
+  transition: height 3s linear;  /* 3-second fill duration */
+  background: hsl(var(--primary)); /* Primary color fill */
+}
+
+.progress-separator.active::after {
+  height: 100%;                  /* Fills to bottom */
+}

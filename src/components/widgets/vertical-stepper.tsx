@@ -1,4 +1,4 @@
-import { component$, useSignal, useComputed$, useStyles$ } from '@builder.io/qwik';
+import { component$, useSignal, useComputed$, useStyles$, useVisibleTask$ } from '@builder.io/qwik';
 import { Carousel, Separator } from '@qwik-ui/headless';
 import { cn } from '@qwik-ui/utils';
 import { Wrapper } from './Wrapper';
@@ -9,8 +9,169 @@ import { Card } from '../ui/Card';
 
 export default component$(() => {
   useStyles$(styles);
+  
+  // Add custom animation styles
+  useStyles$(`
+    .carousel-slide {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateY(0);
+      opacity: 1;
+    }
+    
+    .carousel-slide:not([data-active]) {
+      transform: translateY(10px);
+      opacity: 0.7;
+    }
+    
+    .carousel-slide[data-active] {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    
+    .carousel-slide[data-active] .phase-content {
+      animation: slideInFromRight 0.5s ease-out;
+    }
+    
+    .carousel-slide[data-active] .milestone-item {
+      animation: fadeInUp 0.4s ease-out both;
+    }
+    
+    .carousel-slide[data-active] .milestone-item:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+    
+    .carousel-slide[data-active] .milestone-item:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    
+    .carousel-slide[data-active] .milestone-item:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+    
+    .carousel-slide[data-active] .milestone-item:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+    
+    .milestone-item {
+      opacity: 0;
+      transform: translateY(10px) translateX(15px);
+    }
+    
+    .carousel-step span {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .carousel-step[data-active] span {
+      transform: scale(1.02);
+      animation: pulseOnce 0.3s ease-out;
+    }
+    
+    .phase-content {
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateX(0);
+      opacity: 1;
+    }
+    
+    @keyframes slideInFromRight {
+      from {
+        transform: translateX(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px) translateX(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) translateX(0);
+      }
+    }
+    
+    @keyframes pulseOnce {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1.02); }
+    }
+    
+    /* Progress dot animations */
+    .progress-separator {
+      position: relative;
+      overflow: hidden;
+      background: #e5e7eb !important; /* gray-200 */
+      transition: all 0.3s ease;
+    }
+    
+    .progress-separator::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 0%;
+      background: hsl(var(--primary));
+      transition: height 3s linear;
+      border-radius: inherit;
+      z-index: 1;
+    }
+    
+    .progress-separator.active::after {
+      height: 100%;
+      animation: fillProgress 3s linear forwards;
+    }
+    
+    .progress-separator.completed {
+      background: hsl(var(--primary)) !important;
+    }
+    
+    .progress-separator.completed::after {
+      display: none;
+    }
+    
+    @keyframes fillProgress {
+      from {
+        height: 0%;
+      }
+      to {
+        height: 100%;
+      }
+    }
+  `);
 
   const space = { marginBlock: '1rem' };
+
+  // Signal to control autoplay state
+  const isPlaying = useSignal<boolean>(false);
+  const hasCompletedOneCycle = useSignal<boolean>(false);
+  const currentStageStartTime = useSignal<number>(0);
+
+  // Start autoplay when component becomes visible
+  useVisibleTask$(() => {
+    isPlaying.value = true;
+    currentStageStartTime.value = Date.now();
+  });
+
+  // Watch for stage changes to reset the animation timing
+  useVisibleTask$(({ track }) => {
+    track(() => selectedIndex.value);
+    currentStageStartTime.value = Date.now();
+    
+    // If we've reached the end (last slide) and we're playing
+    if (selectedIndex.value === roadmapPhases.length - 1 && isPlaying.value && !hasCompletedOneCycle.value) {
+      // Set a timeout to go to first slide one more time, then stop
+      setTimeout(() => {
+        selectedIndex.value = 0;
+        hasCompletedOneCycle.value = true;
+        isPlaying.value = false; // Stop autoplay
+      }, 3000); // Wait for the interval time before cycling back
+    }
+  });
 
   // Hardcoded 4 phases of a roadmap with icons
   const roadmapPhases = [
@@ -66,16 +227,29 @@ export default component$(() => {
 
   // Bind to carousel's selectedIndex for reactive updates
   const selectedIndex = useSignal(0);
+  const previousIndex = useSignal(0);
 
   // Compute progress index to determine which separators are active
   const progressIndex = useComputed$(() => selectedIndex.value);
+
+  // Track previous index for animations
+  useVisibleTask$(({ track }) => {
+    track(() => selectedIndex.value);
+    previousIndex.value = selectedIndex.value;
+  });
 
   return (
     <>
       <Wrapper>
         <Card.Root class="p-4 pt-6">
         <Heading />
-        <Carousel.Root class="carousel-root" gap={30} bind:selectedIndex={selectedIndex}>
+        <Carousel.Root 
+          class="carousel-root" 
+          gap={30} 
+          bind:selectedIndex={selectedIndex}
+          autoPlayIntervalMs={3000}
+          bind:autoplay={isPlaying}
+        >
           <div class="flex flex-row gap-5">
             <div class="w-1/3 rounded hidden md:block" />
 
@@ -90,11 +264,14 @@ export default component$(() => {
                       key={`spacer-${index}`}
                     />
                     {index < roadmapPhases.length - 1 && (
-                      <Separator
-                        class={cn(
-                          'w-1 h-4 bg-gray-200 rounded-full',
-                          progressIndex.value >= index && 'bg-primary'
-                        )}
+                      <div
+                        class={`progress-separator w-1 h-4 rounded-full ${
+                          progressIndex.value > index 
+                            ? 'completed' 
+                            : progressIndex.value === index && isPlaying.value
+                              ? 'active'
+                              : ''
+                        }`}
                         style={{ transform: 'rotate(0deg)' }}
                         key={`separator-${index}`}
                       />
@@ -135,12 +312,16 @@ export default component$(() => {
                       class="carousel-slide p-3 text-sm md:p-4 !mt-2 bg-primary/10 rounded-lg shadow-sm"
                       key={`slide-${index}`}
                     >
-                      <p>{phase.description}</p>
-                      <ul class="list-disc list-outside pl-5 space-y-0">
-                        {phase.milestones.map((milestone, i) => (
-                          <li key={`milestone-${i}`}>{milestone}</li>
-                        ))}
-                      </ul>
+                      <div class="phase-content">
+                        <p class="mb-3">{phase.description}</p>
+                        <ul class="list-disc list-outside pl-5 space-y-1">
+                          {phase.milestones.map((milestone, i) => (
+                            <li key={`milestone-${i}`} class="milestone-item text-sm leading-relaxed">
+                              {milestone}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </Carousel.Slide>
                   </>
                 ))}
