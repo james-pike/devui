@@ -73,7 +73,7 @@ export default component$(() => {
   return (
     <>
       <Wrapper>
-        <Card.Root class="p-4 pt-6">
+        <Card.Root class="p-4 pt-6 bg-primary/5">
         <Heading />
         <Carousel.Root class="carousel-root" gap={30} bind:selectedIndex={selectedIndex}>
           <div class="flex flex-row gap-5">

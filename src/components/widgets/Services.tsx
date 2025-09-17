@@ -20,7 +20,7 @@ export default component$(() => {
 <Card.Title class="text-xl">
 Our Services
     </Card.Title>
-    <Card.Description class="text-lg">
+    <Card.Description class="text-md">
 Premium web design, development, branding and marketing.
     </Card.Description>
 

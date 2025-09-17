@@ -23,7 +23,7 @@ const BookIcon = component$(() => {
 export default component$(() => {
   return (
     <Tabs.Root class="">
-      <Tabs.List class="grid w-full grid-cols-4 text-sm">
+      <Tabs.List class="grid w-full grid-cols-4 text-xs">
         <Tabs.Tab>
           <div class="flex flex-col items-center">
             <PaintbrushIcon />
