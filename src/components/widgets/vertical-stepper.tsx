@@ -54,7 +54,7 @@ export default component$(() => {
     
     .milestone-item {
       opacity: 0;
-      transform: translateY(10px) translateX(15px);
+      transform: translateY(10px) translateX(10px);
     }
     
     .carousel-step span {
