@@ -1,5 +1,5 @@
 import { component$, useSignal, useComputed$, useStyles$, useVisibleTask$ } from '@builder.io/qwik';
-import { Carousel, Separator } from '@qwik-ui/headless';
+import { Carousel } from '@qwik-ui/headless';
 import { cn } from '@qwik-ui/utils';
 import { Wrapper } from './Wrapper';
 import Heading from './Heading';
