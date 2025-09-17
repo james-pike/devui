@@ -4,8 +4,8 @@ export default component$(() => {
   return (
     <div>
       <div class="space-y-1 pt-3">
-        <h4 class="text-sm font-medium leading-none">Design Services</h4>
-        <p class="text-xs text-muted-foreground">Our designs explore color, font, styles, vectors, animations, a full design system.</p>
+        <h4 class="text-md font-medium leading-none">Design Services</h4>
+        <p class="text-sm text-muted-foreground">Our designs explore color, font, styles, vectors, animations, a full design system.</p>
       </div>
       <Separator class="mt-3 mb-4" />
       <div class="flex h-5 items-center space-x-4 text-sm">
