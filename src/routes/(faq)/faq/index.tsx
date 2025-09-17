@@ -1,6 +1,5 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import FAQAccordion from "~/components/widgets/FAQAccordion";
 import FAQTabs from "~/components/widgets/FAQTabs";
 
 

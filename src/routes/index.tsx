@@ -4,7 +4,6 @@ import { SITE } from "~/config.mjs";
 import VerticalStepper from "~/components/widgets/vertical-stepper";
 import MultipleSlides from "~/components/widgets/MultipleSlides";
 import Reviews from "~/components/widgets/Reviews";
-import FAQAccordion from "~/components/widgets/FAQAccordion";
 import Services from "~/components/widgets/Services";
 import FAQTabs from "~/components/widgets/FAQTabs";
 
