@@ -6,9 +6,8 @@ import { Wrapper } from './Wrapper';
 
 export default component$(() => {
   return (
-     <Wrapper>
-            <Card.Root class="p-4 pt-6">
-            <Heading />
+    
+            <Card.Root class="p-4 pt-2">
     <Accordion.Root class="w-full">
       <Accordion.Item>
         <Accordion.Trigger header="h2">Is it accessible?</Accordion.Trigger>
@@ -32,6 +31,6 @@ export default component$(() => {
     </Accordion.Root>
     
     </Card.Root> 
-    </Wrapper>
+    
   );
 });
