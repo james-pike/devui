@@ -4,7 +4,7 @@ import { Card } from '../ui/Card';
 import { LuBook, LuCode, LuPaintbrush, LuMegaphone } from '@qwikest/icons/lucide';
 import FAQAccordion from './FAQAccordion';
 
-// Create Qwik-compatible icon components
+// Create Qwik-compatible icon componentss
 const PaintbrushIcon = component$(() => {
   return <LuPaintbrush class="w-5 h-5 mb-1" />;
 });
