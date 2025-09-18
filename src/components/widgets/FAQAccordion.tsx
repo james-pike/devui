@@ -17,7 +17,10 @@ export default component$<FAQAccordionProps>(({ faqs }) => {
       <Accordion.Root class="w-full">
         {faqs.map((faq, index) => (
           <Accordion.Item key={index}>
-            <Accordion.Trigger header={index === 0 ? "h2" : undefined}>
+            <Accordion.Trigger 
+              header={index === 0 ? "h2" : undefined}
+              class="text-left" // Add this class to enforce left alignment
+            >
               {faq.question}
             </Accordion.Trigger>
             <Accordion.Content>

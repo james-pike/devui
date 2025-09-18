@@ -3,6 +3,7 @@ import { Tabs } from '../ui/Tabs';
 import { Card } from '../ui/Card';
 import { LuBook, LuCode, LuPaintbrush, LuMegaphone } from '@qwikest/icons/lucide';
 import FAQAccordion from './FAQAccordion';
+import Heading from './Heading';
 
 // Create Qwik-compatible icon componentss
 const PaintbrushIcon = component$(() => {
@@ -29,7 +30,7 @@ export default component$(() => {
       answer: "We offer comprehensive design services including UI/UX design, web design, mobile app design, branding, and graphic design. Our team focuses on creating user-centered designs that are both beautiful and functional."
     },
     {
-      question: "How long does a typical design project take?",
+      question: "How long does a design project take?",
       answer: "Design timelines vary based on project complexity. A simple website design typically takes 2-4 weeks, while comprehensive branding or complex web applications can take 6-12 weeks. We'll provide a detailed timeline during our initial consultation."
     },
     {
@@ -198,9 +199,8 @@ export default component$(() => {
       `}</style>
       
       <div class="tab-images">
-        <img src='/images/Web-Design.webp' class="tab-image" alt="Web Design" />
-        <img src='/images/software.webp' class="tab-image" alt="Software Development" />
-      </div>
+        {/* <img src='/images/Web-Design.webp' class="tab-image" alt="Web Design" /> */}
+<Heading/>      </div>
       
       <Tabs.Root class="">
         <Tabs.List class="grid w-full grid-cols-4 text-xs">
