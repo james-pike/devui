@@ -149,7 +149,6 @@ export default component$<PropsOf<typeof Button>>(() => {
         <>
    
  
-    <PortfolioHeading/>
       
 
         {/* <label class="mb-1 mt-8 block font-medium">Primary</label> */}
