@@ -198,7 +198,7 @@ export default component$(() => {
     },
     {
       headline: 'Phase 2:',
-      title: 'Development & Prototyping',
+      title: 'Development & Prototype',
       icon: '💻',
       description: 'Build initial prototypes and core features, focusing on iterative development and user feedback.',
       milestones: [

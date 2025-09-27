@@ -200,8 +200,10 @@ export default component$(() => {
       
       <div class="tab-images">
         {/* <img src='/images/Web-Design.webp' class="tab-image" alt="Web Design" /> */}
-<Heading/>      </div>
-      
+    </div>
+    <Card.Root>
+      <Heading/>  
+      </Card.Root>
       <Tabs.Root class="">
         <Tabs.List class="grid w-full grid-cols-4 text-xs">
           <Tabs.Tab data-value="0">

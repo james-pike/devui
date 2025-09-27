@@ -55,7 +55,7 @@ export default component$(() => {
         [data-value="1"][data-state="active"] ~ .tab-content .tab-image:nth-child(2) { opacity: 1; }
       `}</style>
       
-      <div class="tab-images">
+      <div class="tab-images hidden">
         <img src='/images/Web-Design.webp' class="tab-image" alt="Web Design" />
         <img src='/images/software.webp' class="tab-image" alt="Software Development" />
       </div>
