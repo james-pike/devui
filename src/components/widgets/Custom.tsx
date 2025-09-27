@@ -534,8 +534,8 @@ export default component$<PropsOf<typeof Button>>(() => {
           </div>
         </div>
 
-               <label class="mb-1 block font-medium">Preset</label>
-        <select
+               {/* <label class="mb-1 block font-medium">Preset</label> */}
+        {/* <select
           class="h-12 w-full rounded-base border p-2"
           value={themeComputedObjectSig.value.style}
           onChange$={async (e, el) => {
@@ -558,7 +558,7 @@ export default component$<PropsOf<typeof Button>>(() => {
           {rootStore.featureFlags?.showNeumorphic && (
             <option value={'neumorphic'}>Neumorphic</option>
           )}
-        </select>
+        </select> */}
 
         <div class="mt-8">
           Dark Mode{' '}

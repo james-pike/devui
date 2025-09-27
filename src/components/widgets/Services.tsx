@@ -17,6 +17,7 @@ export default component$(() => {
       <Wrapper>
 <Card.Root>
   <Card.Header>
+    <img src='' class="h-40 bg-primary"></img>
     <PortfolioHeading/>
 
   </Card.Header>
