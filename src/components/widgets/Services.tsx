@@ -3,7 +3,6 @@ import { component$,  useStyles$ } from '@builder.io/qwik';
 import { Wrapper } from './Wrapper';
 
 import styles from './carousel.css?inline';
-import ServicesTabs from './ServicesTabs';
 import Custom from './Custom';
 import { Card } from '../ui/Card';
 import PortfolioHeading from './PortfolioHeading';
@@ -29,7 +28,6 @@ export default component$(() => {
   </Card.Content>
          </Card.Root>    
 
-     <ServicesTabs/>
   
       </Wrapper>
     </>
