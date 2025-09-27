@@ -56,7 +56,7 @@ const themeToString = (theme: Theme): string => {
 };
 
 export default component$<PropsOf<typeof Button>>(() => {
-  const rootStore = useAppState();
+  // const rootStore = useAppState();
   const { themeSig } = useTheme();
 
   const themeComputedObjectSig = useComputed$((): ThemeConfig => {
