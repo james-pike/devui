@@ -14,7 +14,6 @@ import { ThemePrimaryColors } from '~/lib/themes/theme-primary-colors';
 import { ThemeStyles } from '~/lib/themes/theme-styles';
 import { cn } from '@qwik-ui/utils';
 import { Button,  } from '../ui/Button';
-import PortfolioHeading from './PortfolioHeading';
 
 const parseThemeString = (themeString: string): ThemeConfig => {
   const themeArray = themeString.split(' ');
