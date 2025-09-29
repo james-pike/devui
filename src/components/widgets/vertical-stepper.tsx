@@ -247,10 +247,15 @@ export default component$(() => {
     previousIndex.value = selectedIndex.value;
   });
 
+  // Compute background opacity based on selected index
+  const bgOpacity = useComputed$(() => {
+    return (selectedIndex.value + 1) * 10;
+  });
+
   return (
     <>
       <Wrapper>
-        <Card.Root class="p-4 md:p-6 pt-7">
+        <Card.Root class="p-4 md:p-6 pt-7 border-primary/20">
         <Heading />
         <Carousel.Root 
           class="carousel-root" 
@@ -260,7 +265,11 @@ export default component$(() => {
           bind:autoplay={isPlaying}
         >
           <div class="flex flex-row gap-5">
-<div class={`w-1/3 rounded hidden md:block bg-primary/${(selectedIndex.value + 1) * 10}`} />
+            <div 
+              class="w-1/3 rounded hidden md:block" 
+              style={`background-color: hsl(var(--primary) / ${bgOpacity.value}%)`}
+            />
+
             <div class="flex flex-row items-start md:w-1/2">
               {/* Vertical progress line */}
               <div class="flex flex-col items-center justify-start w-2 mr-3">
@@ -271,7 +280,7 @@ export default component$(() => {
                       style={{ marginTop: index === 0 ? '1rem' : '0.5rem' }}
                       key={`spacer-${index}`}
                     />
-                    {index < roadmapPhases.length - 1 && (
+                    {index < roadmapPhases.length  && (
                       <div
                         class={`progress-separator w-1 h-4 rounded-full ${
                           userHasInteracted.value 
@@ -288,11 +297,7 @@ export default component$(() => {
                     )}
                   </>
                 ))}
-                <div
-                  class="w-1 h-4 bg-gray-200 rounded-full"
-                  style={{ marginBottom: '1rem' }}
-                  key="bottom-spacer"
-                />
+               
               </div>
 
               {/* Stepper with alternating steps and slides */}
