@@ -250,7 +250,7 @@ export default component$(() => {
   return (
     <>
       <Wrapper>
-        <Card.Root class="p-4 pt-6">
+        <Card.Root class="p-4 md:p-6 pt-7">
         <Heading />
         <Carousel.Root 
           class="carousel-root" 
@@ -260,8 +260,7 @@ export default component$(() => {
           bind:autoplay={isPlaying}
         >
           <div class="flex flex-row gap-5">
-            <div class="w-1/3 rounded hidden md:block" />
-
+<div class={`w-1/3 rounded hidden md:block bg-primary/${(selectedIndex.value + 1) * 10}`} />
             <div class="flex flex-row items-start md:w-1/2">
               {/* Vertical progress line */}
               <div class="flex flex-col items-center justify-start w-2 mr-3">
