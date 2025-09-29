@@ -11,7 +11,7 @@ export const Separator = component$<PropsOf<typeof HeadlessSeparator>>(
           decorative={decorative}
           orientation={orientation}
           class={cn(
-            'shrink-0 bg-primary/15',
+            'shrink-0 bg-primary/10',
             orientation === 'horizontal' ? 'h-px w-full' : 'h-full w-px',
             props.class,
           )}
