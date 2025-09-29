@@ -255,98 +255,96 @@ export default component$(() => {
   return (
     <>
       <Wrapper>
-        <Card.Root class="p-4 md:p-6 pt-7">
+        <Card.Root class="p-4 md:p-8 pt-7 max-w-6xl mx-auto">
         <Heading />
-        <Carousel.Root 
-          class="carousel-root" 
-          gap={30} 
-          bind:selectedIndex={selectedIndex}
-          autoPlayIntervalMs={3000}
-          bind:autoplay={isPlaying}
-        >
-          <div class="flex flex-row gap-5">
-            <div 
-              class="w-1/3 rounded hidden md:block" 
-              style={`background-color: hsl(var(--primary) / ${bgOpacity.value}%)`}
+       <Carousel.Root 
+  class="carousel-root" 
+  gap={30} 
+  bind:selectedIndex={selectedIndex}
+  autoPlayIntervalMs={3000}
+  bind:autoplay={isPlaying}
+>
+  <div class="flex flex-row gap-5 w-full">
+    <div 
+      class="w-1/3 rounded hidden md:block aspect-square" 
+      style={`background-color: hsl(var(--primary) / ${bgOpacity.value}%)`}
+    />
+    <div class="flex flex-row items-start w-full md:flex-1">
+      {/* Vertical progress line */}
+      <div class="flex flex-col items-center justify-start w-2 mr-3">
+        {roadmapPhases.map((_, index) => (
+          <>
+            <div
+              class="w-1 h-0 bg-gray-200 rounded-full"
+              style={{ marginTop: index === 0 ? '1rem' : '0.5rem' }}
+              key={`spacer-${index}`}
             />
+            {index < roadmapPhases.length && (
+              <div
+                class={`progress-separator w-1 h-4 rounded-full ${
+                  userHasInteracted.value 
+                    ? progressIndex.value >= index ? 'user-controlled' : ''
+                    : progressIndex.value > index 
+                      ? 'completed' 
+                      : progressIndex.value === index && isPlaying.value
+                        ? 'active'
+                        : ''
+                }`}
+                style={{ transform: 'rotate(0deg)' }}
+                key={`separator-${index}`}
+              />
+            )}
+          </>
+        ))}
+      </div>
 
-            <div class="flex flex-row items-start md:w-1/2">
-              {/* Vertical progress line */}
-              <div class="flex flex-col items-center justify-start w-2 mr-3">
-                {roadmapPhases.map((_, index) => (
-                  <>
-                    <div
-                      class="w-1 h-0 bg-gray-200 rounded-full"
-                      style={{ marginTop: index === 0 ? '1rem' : '0.5rem' }}
-                      key={`spacer-${index}`}
-                    />
-                    {index < roadmapPhases.length  && (
-                      <div
-                        class={`progress-separator w-1 h-4 rounded-full ${
-                          userHasInteracted.value 
-                            ? (progressIndex.value >= index ? 'user-controlled' : '')
-                            : progressIndex.value > index 
-                              ? 'completed' 
-                              : progressIndex.value === index && isPlaying.value
-                                ? 'active'
-                                : ''
-                        }`}
-                        style={{ transform: 'rotate(0deg)' }}
-                        key={`separator-${index}`}
-                      />
-                    )}
-                  </>
-                ))}
-               
+      {/* Stepper with alternating steps and slides */}
+      <Carousel.Stepper class="carousel-stepper w-full" style={{ flexDirection: 'column' }}>
+        {roadmapPhases.map((phase, index) => (
+          <>
+            <Carousel.Step
+              class="flex items-start justify-start cursor-pointer"
+              key={`step-${index}`}
+              onClick$={() => {
+                console.log(`Clicked index: ${index}`); // Debug click
+                userHasInteracted.value = true; // Mark as user-controlled
+                isPlaying.value = false; // Stop autoplay
+                selectedIndex.value = index; // Manually update selected index
+              }}
+            >
+              <span
+                class={cn(
+                  'text-sm md:text-base font-medium px-3 py-1.5 rounded',
+                  selectedIndex.value === index ? 'bg-primary text-white' : 'bg-transparent'
+                )}
+              >
+                <span class="rounded-l-base bg-white/40 py-1 pl-2 -ml-2 mr-1.5 "> {phase.headline} </span>
+                {phase.title}
+                <span class="ml-1">{phase.icon}</span>
+              </span>
+            </Carousel.Step>
+            <Carousel.Slide
+              style={space}
+              class="carousel-slide p-3 text-sm md:p-4 !mt-2 bg-primary/10 rounded-lg shadow-sm"
+              key={`slide-${index}`}
+            >
+              <div class="phase-content">
+                <p class="mb-3">{phase.description}</p>
+                <ul class="list-disc list-outside pl-5 space-y-1">
+                  {phase.milestones.map((milestone, i) => (
+                    <li key={`milestone-${i}`} class="milestone-item text-sm leading-relaxed">
+                      {milestone}
+                    </li>
+                  ))}
+                </ul>
               </div>
-
-              {/* Stepper with alternating steps and slides */}
-              <Carousel.Stepper class="carousel-stepper w-full" style={{ flexDirection: 'column' }}>
-                {roadmapPhases.map((phase, index) => (
-                  <>
-                    <Carousel.Step
-                      class="flex items-start justify-start cursor-pointer"
-                      key={`step-${index}`}
-                      onClick$={() => {
-                        console.log(`Clicked index: ${index}`); // Debug click
-                        userHasInteracted.value = true; // Mark as user-controlled
-                        isPlaying.value = false; // Stop autoplay
-                        selectedIndex.value = index; // Manually update selected index
-                      }}
-                    >
-                      <span
-                        class={cn(
-                          'text-sm md:text-base font-medium px-3 py-1.5 rounded',
-                          selectedIndex.value === index ? 'bg-primary text-white' : 'bg-transparent'
-                        )}
-                      >
-                       <span class="rounded-l-base bg-white/40 py-1 pl-2 -ml-2 mr-1.5 "> {phase.headline} </span>
-                        {phase.title}
-                        <span class="ml-1">{phase.icon}</span>
-                      </span>
-                    </Carousel.Step>
-                    <Carousel.Slide
-                      style={space}
-                      class="carousel-slide p-3 text-sm md:p-4 !mt-2 bg-primary/10 rounded-lg shadow-sm"
-                      key={`slide-${index}`}
-                    >
-                      <div class="phase-content">
-                        <p class="mb-3">{phase.description}</p>
-                        <ul class="list-disc list-outside pl-5 space-y-1">
-                          {phase.milestones.map((milestone, i) => (
-                            <li key={`milestone-${i}`} class="milestone-item text-sm leading-relaxed">
-                              {milestone}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </Carousel.Slide>
-                  </>
-                ))}
-              </Carousel.Stepper>
-            </div>
-          </div>
-        </Carousel.Root>
+            </Carousel.Slide>
+          </>
+        ))}
+      </Carousel.Stepper>
+    </div>
+  </div>
+</Carousel.Root>
         </Card.Root>
       </Wrapper>
     </>
