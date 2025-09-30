@@ -255,7 +255,7 @@ export default component$(() => {
   return (
     <>
       <Wrapper>
-        <Card.Root class="p-4 md:p-8 pt-7 max-w-6xl mx-auto">
+        <Card.Root class="p-4 md:p-8 pt-5 max-w-6xl mx-auto">
         <Heading />
        <Carousel.Root 
   class="carousel-root" 
