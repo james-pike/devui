@@ -5,7 +5,6 @@ import { Wrapper } from './Wrapper';
 import styles from './carousel.css?inline';
 import Custom from './Custom';
 import { Card } from '../ui/Card';
-import PortfolioHeading from './PortfolioHeading';
 import Heading from './Heading';
 
 export default component$(() => {

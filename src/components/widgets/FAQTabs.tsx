@@ -6,21 +6,21 @@ import FAQAccordion from './FAQAccordion';
 import Heading from './Heading';
 
 // Create Qwik-compatible icon componentss
-const PaintbrushIcon = component$(() => {
-  return <LuPaintbrush class="w-5 h-5 mb-1" />;
-});
+// const PaintbrushIcon = component$(() => {
+//   return <LuPaintbrush class="w-5 h-5 mb-1" />;
+// });
 
-const CodeIcon = component$(() => {
-  return <LuCode class="w-5 h-5 mb-1" />;
-});
+// const CodeIcon = component$(() => {
+//   return <LuCode class="w-5 h-5 mb-1" />;
+// });
 
-const BookIcon = component$(() => {
-  return <LuBook class="w-5 h-5 mb-1" />;
-});
+// const BookIcon = component$(() => {
+//   return <LuBook class="w-5 h-5 mb-1" />;
+// });
 
-const MarketingIcon = component$(() => {
-  return <LuMegaphone class="w-5 h-5 mb-1" />;
-});
+// const MarketingIcon = component$(() => {
+//   return <LuMegaphone class="w-5 h-5 mb-1" />;
+// });
 
 export default component$(() => {
   // FAQ data for each category
