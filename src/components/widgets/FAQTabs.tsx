@@ -1,7 +1,6 @@
 import { component$ } from '@builder.io/qwik';
 import { Tabs } from '../ui/Tabs';
 import { Card } from '../ui/Card';
-import { LuBook, LuCode, LuPaintbrush, LuMegaphone } from '@qwikest/icons/lucide';
 import FAQAccordion from './FAQAccordion';
 import Heading from './Heading';
 
