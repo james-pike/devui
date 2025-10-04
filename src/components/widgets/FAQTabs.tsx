@@ -201,32 +201,29 @@ export default component$(() => {
       <div class="tab-images">
         {/* <img src='/images/Web-Design.webp' class="tab-image" alt="Web Design" /> */}
     </div>
-    <Card.Root>
+    <div class="max-w-5xl mx-auto">
+    <Card.Root class="p-3.5">
       <Heading/>  
-      </Card.Root>
-      <Tabs.Root class="">
+     
+      <Tabs.Root class="-mt-3.5">
         <Tabs.List class="grid w-full grid-cols-4 text-xs">
           <Tabs.Tab data-value="0">
             <div class="flex flex-col items-center">
-              <PaintbrushIcon />
               Design
             </div>
           </Tabs.Tab>
           <Tabs.Tab data-value="1">
             <div class="flex flex-col items-center">
-              <CodeIcon />
               Develop
             </div>
           </Tabs.Tab>
           <Tabs.Tab data-value="2">
             <div class="flex flex-col items-center">
-              <BookIcon />
               Branding
             </div>
           </Tabs.Tab>
           <Tabs.Tab data-value="3">
             <div class="flex flex-col items-center">
-              <MarketingIcon />
               Marketing
             </div>
           </Tabs.Tab>
@@ -234,7 +231,7 @@ export default component$(() => {
         
         <Tabs.Panel class="">
           <Card.Root class="rounded-t-none border-none">
-            <Card.Content class="space-y-2 p-3">
+            <Card.Content class="space-y-2 p-0">
               <FAQAccordion faqs={designFAQs} />
             </Card.Content>
           </Card.Root>
@@ -242,7 +239,7 @@ export default component$(() => {
         
         <Tabs.Panel class="">
           <Card.Root class="rounded-t-none border-none">
-            <Card.Content class="space-y-2 p-3">
+            <Card.Content class="space-y-2 p-0">
               <FAQAccordion faqs={developmentFAQs} />
             </Card.Content>
           </Card.Root>
@@ -250,7 +247,7 @@ export default component$(() => {
         
         <Tabs.Panel>
           <Card.Root class="border-none rounded-t-none">
-            <Card.Content class="space-y-2 p-3">
+            <Card.Content class="space-y-2 p-0">
               <FAQAccordion faqs={brandingFAQs} />
             </Card.Content>
           </Card.Root>
@@ -258,12 +255,14 @@ export default component$(() => {
         
         <Tabs.Panel>
           <Card.Root class="rounded-t-none border-none">
-            <Card.Content class="space-y-2 p-3">
+            <Card.Content class="space-y-2 p-0">
               <FAQAccordion faqs={marketingFAQs} />
             </Card.Content>
           </Card.Root>
         </Tabs.Panel>
       </Tabs.Root>
+       </Card.Root>
+      </div>
     </>
   );
 });

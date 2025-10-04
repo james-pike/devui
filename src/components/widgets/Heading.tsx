@@ -33,7 +33,7 @@ export default component$(() => {
           {/* Example icon using an SVG; you can replace with your preferred icon */}
  <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-16 w-16 text-primary/10 ml-1"
+              class="h-16 w-16 text-primary/30 ml-1"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"

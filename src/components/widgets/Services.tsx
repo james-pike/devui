@@ -6,6 +6,7 @@ import styles from './carousel.css?inline';
 import Custom from './Custom';
 import { Card } from '../ui/Card';
 import PortfolioHeading from './PortfolioHeading';
+import Heading from './Heading';
 
 export default component$(() => {
   useStyles$(styles);
@@ -17,8 +18,8 @@ export default component$(() => {
       <Wrapper>
 <Card.Root>
   <Card.Header>
-    <img src='' class="h-24 bg-primary"></img>
-    <PortfolioHeading/>
+    {/* <img src='' class="h-24 bg-primary"></img> */}
+    <Heading/>
 
   </Card.Header>
 

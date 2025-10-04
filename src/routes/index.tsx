@@ -1,7 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
 import { SITE } from "~/config.mjs";
-import VerticalStepper from "~/components/widgets/vertical-stepper";
+import VerticalStepper from "~/components/widgets/Process";
 import MultipleSlides from "~/components/widgets/MultipleSlides";
 import Reviews from "~/components/widgets/Reviews";
 import Services from "~/components/widgets/Services";

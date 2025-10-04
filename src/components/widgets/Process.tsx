@@ -182,58 +182,57 @@ export default component$(() => {
     }
   });
 
-  // Hardcoded 4 phases of a roadmap with icons
-  const roadmapPhases = [
-    {
-      headline: 'Phase 1:',
-      title: 'Foundation & Planning',
-      icon: '🛠️',
-      description: 'Lay the groundwork for the project, including initial research, team formation, and technical setup.',
-      milestones: [
-        'Conduct market research and user interviews',
-        'Define project scope and objectives',
-        'Set up development environment and CI/CD pipelines',
-        'Assemble core team and assign roles',
-      ],
-    },
-    {
-      headline: 'Phase 2:',
-      title: 'Development & Prototype',
-      icon: '💻',
-      description: 'Build initial prototypes and core features, focusing on iterative development and user feedback.',
-      milestones: [
-        'Develop MVP with core functionality',
-        'Conduct usability testing with early users',
-        'Implement feedback loops for iterative improvements',
-        'Establish backend infrastructure and APIs',
-      ],
-    },
-    {
-      headline: 'Phase 3:',
-      title: 'Testing & Refinement',
-      icon: '🧪',
-      description: 'Focus on rigorous testing, bug fixing, and feature refinement to ensure a polished product.',
-      milestones: [
-        'Perform comprehensive QA and stress testing',
-        'Optimize performance and scalability',
-        'Incorporate advanced features based on user feedback',
-        'Prepare for production deployment',
-      ],
-    },
-    {
-      headline: 'Phase 4:',
-      title: 'Launch & Growth',
-      icon: '🚀',
-      description: 'Release the product to the public, monitor performance, and plan for future enhancements.',
-      milestones: [
-        'Execute marketing and launch strategy',
-        'Monitor user engagement and analytics',
-        'Roll out updates and new features',
-        'Plan for long-term scalability and support',
-      ],
-    },
-  ];
-
+// 4 phases of a web design and development agency roadmap
+const roadmapPhases = [
+  {
+    headline: 'Phase 1:',
+    title: 'Discovery & Strategy',
+    icon: '🎯',
+    description: 'Understand client goals, target audience, and competitive landscape to create a strategic foundation.',
+    milestones: [
+      'Conduct stakeholder interviews and brand workshops',
+      'Perform competitive analysis and market research',
+      'Define project goals, KPIs, and success metrics',
+      'Create sitemap, user personas, and content strategy',
+    ],
+  },
+  {
+    headline: 'Phase 2:',
+    title: 'Design & Prototyping',
+    icon: '🎨',
+    description: 'Transform strategy into visual concepts through wireframing, design systems, and interactive prototypes.',
+    milestones: [
+      'Develop wireframes and information architecture',
+      'Create high-fidelity mockups and design system',
+      'Build interactive prototypes for user testing',
+      'Finalize visual direction and brand guidelines',
+    ],
+  },
+  {
+    headline: 'Phase 3:',
+    title: 'Development & Integration',
+    icon: '⚙️',
+    description: 'Build responsive, performant websites with clean code, seamless integrations, and optimal functionality.',
+    milestones: [
+      'Develop frontend with responsive layouts',
+      'Integrate CMS, APIs, and third-party services',
+      'Implement SEO best practices and accessibility standards',
+      'Conduct cross-browser and device testing',
+    ],
+  },
+  {
+    headline: 'Phase 4:',
+    title: 'Launch & Optimization',
+    icon: '🚀',
+    description: 'Deploy the website, ensure smooth performance, and provide ongoing support for continuous improvement.',
+    milestones: [
+      'Execute pre-launch checklist and final QA',
+      'Deploy to production and monitor performance',
+      'Provide client training and documentation',
+      'Offer ongoing maintenance, updates, and analytics review',
+    ],
+  },
+];
   // Bind to carousel's selectedIndex for reactive updates
   const selectedIndex = useSignal(0);
   const previousIndex = useSignal(0);
