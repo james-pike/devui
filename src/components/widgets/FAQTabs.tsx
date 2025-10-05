@@ -201,7 +201,7 @@ export default component$(() => {
         {/* <img src='/images/Web-Design.webp' class="tab-image" alt="Web Design" /> */}
     </div>
     <div class="max-w-5xl mx-auto">
-    <Card.Root class="p-3.5">
+    <Card.Root class="p-3 md:p-5">
       <Heading/>  
      
       <Tabs.Root class="-mt-3.5">

@@ -14,21 +14,38 @@ interface FAQAccordionProps {
 export default component$<FAQAccordionProps>(({ faqs }) => {
   return (
     <Card.Root class="p-4 pt-2">
-      <Accordion.Root class="w-full">
-        {faqs.map((faq, index) => (
-          <Accordion.Item key={index}>
-            <Accordion.Trigger 
-              header={index === 0 ? "h2" : undefined}
-              class="text-left" // Add this class to enforce left alignment
-            >
-              {faq.question}
-            </Accordion.Trigger>
-            <Accordion.Content>
-              {faq.answer}
-            </Accordion.Content>
-          </Accordion.Item>
-        ))}
-      </Accordion.Root>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <Accordion.Root class="w-full">
+          {faqs.slice(0, Math.ceil(faqs.length / 2)).map((faq, index) => (
+            <Accordion.Item key={index}>
+              <Accordion.Trigger 
+                header={index === 0 ? "h2" : undefined}
+                class="text-left"
+              >
+                {faq.question}
+              </Accordion.Trigger>
+              <Accordion.Content>
+                {faq.answer}
+              </Accordion.Content>
+            </Accordion.Item>
+          ))}
+        </Accordion.Root>
+        <Accordion.Root class="w-full">
+          {faqs.slice(Math.ceil(faqs.length / 2)).map((faq, index) => (
+            <Accordion.Item key={index + Math.ceil(faqs.length / 2)}>
+              <Accordion.Trigger 
+                header={index === 0 ? "h2" : undefined}
+                class="text-left"
+              >
+                {faq.question}
+              </Accordion.Trigger>
+              <Accordion.Content>
+                {faq.answer}
+              </Accordion.Content>
+            </Accordion.Item>
+          ))}
+        </Accordion.Root>
+      </div>
     </Card.Root> 
   );
 });

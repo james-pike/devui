@@ -4,13 +4,13 @@ import { Separator } from '../ui/Separator';
 export default component$(() => {
   return (
     <div>
-      <div class="flex items-center gap-2 px-2 justify-between space-y-1">
+      <div class="flex items-center gap-2 px-0 justify-between space-y-1">
 
 
 
         <div>
           <div class="flex items-center">
-            <h4 class="text-xl md:text-3xl font-medium leading-none">Our Process</h4>
+            <h4 class="text-3xl md:text-4xl font-medium leading-none">Our Process</h4>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-6 w-6 text-primary ml-1"
