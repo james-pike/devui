@@ -1,10 +1,10 @@
 export const SITE = {
-  name: "webdev.ca",
+  name: "Kaslands",
 
   title:
-    "webdev.ca" ,
+    "Kaslands" ,
   description:
-    "webdev.ca" ,
+    "Kaslands" ,
 
   origin: "https://earthenvessels.ca",
   basePathname: "/",

@@ -25,11 +25,11 @@ export default component$(() => {
       
 
         {/* Text Content */}
-        <div class="relative z-20 order-1 md:col-span-2 flex items-center justify-center px-4 md:px-0 pt-16 md:pt-0 pb-10 md:order-1 min-h-[80vh]">
+        <div class="relative z-20 order-1 md:col-span-2 flex items-center justify-center px-4 md:px-0 pt-16 md:pt-0 pb-10 md:order-1 min-h-[100vh]">
           <div class="text-center md:text-left   py-8 px-6 bg-white/50">
             {/* Headline (Desktop only) */}
             <h1 class=" text-5xl text-center md:text-7xl font-bold tracking-tight md:mb-4 mb-8">
-              <span class="bg-gradient-to-r from-[#f29b10] to-[#f29b10] bg-clip-text text-transparent">
+              <span class="bg-gradient-to-r from-primary to-primary bg-clip-text text-transparent">
                 KASLANDS
               </span>
             </h1>
@@ -38,7 +38,7 @@ export default component$(() => {
 Uniting Kaspa projects & members to create the ultimate virtual community. All things Kaspa web3 related, Tokens, NFTs, $KAS Metaverse, Websites, & Games.            </p>
             <a
               href="#"
-              class="w-full sm:w-auto my-1.5 mx-1 bg-gradient-to-r from-primary-400 via-primary-500 to-primary-400 group relative inline-flex items-center justify-center px-3 pl-5 py-2.5 text-xl font-semibold text-white rounded-xl shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-500 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500 hover:scale-102 hover:bg-gradient-to-r hover:from-primary-400 hover:via-primary-400 hover:to-primary-300"
+              class="w-full sm:w-auto my-1.5 mx-1 bg-gradient-to-r from-teal-400 via-teal-500 to-teal-400 group relative inline-flex items-center justify-center px-3 pl-5 py-2.5 text-xl font-semibold text-white rounded-xl shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-500 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500 hover:scale-102 hover:bg-gradient-to-r hover:from-primary-400 hover:via-primary-400 hover:to-primary-300"
               role="button"
               aria-label="Book a workshop"
             >
@@ -56,7 +56,7 @@ Uniting Kaspa projects & members to create the ultimate virtual community. All t
 
             <a
               href="#"
-              class="w-full sm:w-auto bg-gradient-to-r my-1.5 mx-1 from-primary-400 via-primary-500 to-primary-400 group relative inline-flex items-center justify-center px-3 pl-5 py-2.5 text-xl font-semibold text-white rounded-xl shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-500 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500 hover:scale-102 hover:bg-gradient-to-r hover:from-primary-400 hover:via-primary-400 hover:to-primary-300"
+              class="w-full sm:w-auto bg-gradient-to-r my-1.5 mx-1 from-primary via-primary/40 to-primary group relative inline-flex items-center justify-center px-3 pl-5 py-2.5 text-xl font-semibold text-white rounded-xl shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-500 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500 hover:scale-102 hover:bg-gradient-to-r hover:from-primary-400 hover:via-primary-400 hover:to-primary-300"
               role="button"
               aria-label="Join Telegram"
             >
@@ -87,7 +87,7 @@ Uniting Kaspa projects & members to create the ultimate virtual community. All t
 
             <a
               href="#"
-              class="w-full sm:w-auto bg-gradient-to-r my-1.5 mx-1 from-primary-400 via-primary-500 to-primary-400 group relative inline-flex items-center justify-center px-3 pl-5 py-2.5 text-xl font-semibold text-white rounded-xl shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-500 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500 hover:scale-102 hover:bg-gradient-to-r hover:from-primary-400 hover:via-primary-400 hover:to-primary-300"
+              class="w-full sm:w-auto bg-gradient-to-r my-1.5 mx-1 from-yellow-300 via-yellow-200 to-yellow-300 group relative inline-flex items-center justify-center px-3 pl-5 py-2.5 text-xl font-semibold text-white rounded-xl shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-500 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500 hover:scale-102 hover:bg-gradient-to-r hover:from-primary-400 hover:via-primary-400 hover:to-primary-300"
               role="button"
               aria-label="Follow"
             >
