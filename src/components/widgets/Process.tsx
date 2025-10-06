@@ -190,10 +190,10 @@ const roadmapPhases = [
     icon: '🎯',
     description: 'Understand client goals, target audience, and competitive landscape to create a strategic foundation.',
     milestones: [
-      'Conduct stakeholder interviews and brand workshops',
-      'Perform competitive analysis and market research',
-      'Define project goals, KPIs, and success metrics',
-      'Create sitemap, user personas, and content strategy',
+      'Conduct stakeholder interviews ',
+      'Perform competitive analysis research',
+      'Define project goals, KPIs, success metrics',
+      'Create user personas, and content strategy',
     ],
   },
   {
@@ -202,10 +202,10 @@ const roadmapPhases = [
     icon: '🎨',
     description: 'Transform strategy into visual concepts through wireframing, design systems, and interactive prototypes.',
     milestones: [
-      'Develop wireframes and information architecture',
-      'Create high-fidelity mockups and design system',
-      'Build interactive prototypes for user testing',
-      'Finalize visual direction and brand guidelines',
+      'Develop wireframes and architecture',
+      'Create high-fidelity mockup systems',
+      'Build interactive prototypes',
+      'Finalize visual  brand guidelines',
     ],
   },
   {
@@ -215,8 +215,8 @@ const roadmapPhases = [
     description: 'Build responsive, performant websites with clean code, seamless integrations, and optimal functionality.',
     milestones: [
       'Develop frontend with responsive layouts',
-      'Integrate CMS, APIs, and third-party services',
-      'Implement SEO best practices and accessibility standards',
+      'Integrate APIs, and third-party services',
+      'Implement SEO best practices and standards',
       'Conduct cross-browser and device testing',
     ],
   },
@@ -229,7 +229,7 @@ const roadmapPhases = [
       'Execute pre-launch checklist and final QA',
       'Deploy to production and monitor performance',
       'Provide client training and documentation',
-      'Offer ongoing maintenance, updates, and analytics review',
+      'Offer ongoing maintenance, updates, and review',
     ],
   },
 ];
