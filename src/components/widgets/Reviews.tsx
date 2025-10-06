@@ -1,6 +1,9 @@
 import { component$, useStyles$, useSignal, useVisibleTask$ } from '@builder.io/qwik';
 import { Carousel } from '@qwik-ui/headless';
 import styles from './carousel.css?inline';
+import { Card } from '../ui/Card';
+import Heading from './Heading';
+import { Wrapper } from './Wrapper';
 
 export default component$(() => {
   useStyles$(styles);
@@ -15,7 +18,7 @@ export default component$(() => {
 
     const updateSlidesPerView = () => {
       if (window.matchMedia('(min-width: 640px)').matches) {
-        slidesPerViewSig.value = 4; // Larger screens
+        slidesPerViewSig.value = 2; // Larger screens
       } else {
         slidesPerViewSig.value = 1; // Mobile
       }
@@ -29,6 +32,9 @@ export default component$(() => {
   });
 
   return (
+      <Wrapper>
+            <Card.Root class="p-4 md:p-8 pt-5 max-w-6xl mx-auto">
+            <Heading />
     <Carousel.Root
       class="carousel-root"
       slidesPerView={slidesPerViewSig.value}
@@ -38,8 +44,11 @@ export default component$(() => {
     >
       <Carousel.Scroller class="carousel-scroller">
         {colors.map((color) => (
-          <Carousel.Slide key={color} class="carousel-slide bg-primary/10">
-            {color}
+          <Carousel.Slide key={color} class=" ">
+            <Card.Root>
+          
+            <img src={`/images/kaslands.jpeg`} class=" w-full object-cover"/>
+            </Card.Root>
           </Carousel.Slide>
         ))}
       </Carousel.Scroller>
@@ -53,5 +62,7 @@ export default component$(() => {
         </Carousel.Pagination>
       </div>
     </Carousel.Root>
+    </Card.Root>
+    </Wrapper>
   );
 });

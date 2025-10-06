@@ -37,48 +37,48 @@ export default component$(() => {
   return (
 
     <>
-    <PortfolioHeading/>
-    <Carousel.Root
-      class="carousel-root "
-      slidesPerView={slidesPerViewSig.value}
-      gap={30}
-      autoPlayIntervalMs={5500}
-      bind:autoplay={isPlaying}
-    >
-      <Carousel.Scroller class="carousel-scroller !border-none">
-        {colors.map((color) => (
-          <>
-        <Carousel.Slide key={color} class="carousel-slide">
-  <Card.Root class="p-1 bg-primary/10 min-h-36">
-    {color}
-  </Card.Root>
-</Carousel.Slide>
-          </>
-        ))}
-      </Carousel.Scroller>
-      <div class="-mt-2 flex items-center justify-between gap-4">
-        <Carousel.Pagination class="carousel-pagination">
-          {colors.map((color, index) => (
-            <Carousel.Bullet class="carousel-pagination-bullet" key={color}>
-              {index + 1}
-            </Carousel.Bullet>
+      <PortfolioHeading />
+      <Carousel.Root
+        class="carousel-root "
+        slidesPerView={slidesPerViewSig.value}
+        gap={30}
+        autoPlayIntervalMs={5500}
+        bind:autoplay={isPlaying}
+      >
+        <Carousel.Scroller class="carousel-scroller !border-none">
+          {colors.map((color) => (
+            <>
+              <Carousel.Slide key={color} class="carousel-slide">
+                <Card.Root class="p-1 bg-primary/10 min-h-36">
+                  {color}
+                </Card.Root>
+              </Carousel.Slide>
+            </>
           ))}
-        </Carousel.Pagination>
-        <div class="carousel-buttons mt-4 gap-1.5">
-          <Carousel.Previous>
-            <LuArrowLeft />
-          </Carousel.Previous>
-          <Carousel.Next>
-            <LuArrowRight />
-          </Carousel.Next>
+        </Carousel.Scroller>
+        <div class="-mt-2 flex items-center justify-between gap-4">
+          <Carousel.Pagination class="carousel-pagination">
+            {colors.map((color, index) => (
+              <Carousel.Bullet class="carousel-pagination-bullet" key={color}>
+                {index + 1}
+              </Carousel.Bullet>
+            ))}
+          </Carousel.Pagination>
+          <div class="carousel-buttons mt-4 gap-1.5">
+            <Carousel.Previous>
+              <LuArrowLeft />
+            </Carousel.Previous>
+            <Carousel.Next>
+              <LuArrowRight />
+            </Carousel.Next>
+          </div>
         </div>
-      </div>
-    </Carousel.Root>
+      </Carousel.Root>
     </>
   );
 });
 // internal
 import styles from './carousel.css?inline';
-import { LuArrowLeft, LuArrowRight } from '@qwikest/icons/lucide';import PortfolioHeading from './PortfolioHeading';
+import { LuArrowLeft, LuArrowRight } from '@qwikest/icons/lucide'; import PortfolioHeading from './PortfolioHeading';
 import { Card } from '../ui/Card';
 

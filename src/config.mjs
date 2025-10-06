@@ -1,10 +1,10 @@
 export const SITE = {
-  name: "earthen vessels",
+  name: "webdev.ca",
 
   title:
-    "earthen vessels" ,
+    "webdev.ca" ,
   description:
-    "earthen vessels - Listening, Connecting, Creating" ,
+    "webdev.ca" ,
 
   origin: "https://earthenvessels.ca",
   basePathname: "/",
