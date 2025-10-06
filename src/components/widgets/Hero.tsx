@@ -2,7 +2,7 @@ import { component$ } from "@builder.io/qwik";
 
 export default component$(() => {
   return (
-    <section class="relative overflow-hidden min-h-[100vh] -mx-4">
+    <section class="relative overflow-hidden min-h-[900px] -mx-4">
       {/* Background with MP4 video */}
       <div class="absolute inset-0 opacity-80 " aria-hidden="true">
         <video
