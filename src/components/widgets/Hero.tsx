@@ -2,7 +2,7 @@ import { component$ } from "@builder.io/qwik";
 
 export default component$(() => {
   return (
-    <section class="relative overflow-hidden min-h-[100vh]">
+    <section class="relative overflow-hidden min-h-[100vh] -mx-4">
       {/* Background with MP4 video */}
       <div class="absolute inset-0 opacity-80 " aria-hidden="true">
         <video
@@ -22,10 +22,7 @@ export default component$(() => {
 
       <div class="grid grid-cols-1 md:grid-cols-1 items-center bg-transparent h-full">
         {/* Mobile Logo */}
-        <img
-          src="/images/logo.jpg"
-          class="h-auto border-x border-8 border-primary-300 border-t-0 w-full md:hidden"
-        />
+      
 
         {/* Text Content */}
         <div class="relative z-20 order-1 md:col-span-2 flex items-center justify-center px-4 md:px-0 pt-16 md:pt-0 pb-10 md:order-1 min-h-[80vh]">
