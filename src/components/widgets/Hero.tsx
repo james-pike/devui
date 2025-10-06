@@ -12,7 +12,7 @@ export default component$(() => {
           playsInline
           class="w-full h-full object-cover"
         >
-          <source src="/images/hero.mp4" type="video/mp4" />
+          <source src="/images/hero.webm" type="video/webm" />
           Your browser does not support the video tag.
         </video>
       </div>
