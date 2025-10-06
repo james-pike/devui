@@ -3,14 +3,15 @@ import { type DocumentHead } from "@builder.io/qwik-city";
 import { SITE } from "~/config.mjs";
 import Process from "~/components/widgets/Process";
 import Reviews from "~/components/widgets/Reviews";
-import Services from "~/components/widgets/Services";
 import FAQTabs from "~/components/widgets/FAQTabs";
+import Hero from "~/components/widgets/Hero";
 
 
 export default component$(() => {
   return (
     <>
-    <Services/>
+    <Hero/>
+    {/* <Services/> */}
       <Process/>
     
       <Reviews/>

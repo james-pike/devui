@@ -7,6 +7,7 @@ export default component$(() => {
   const store = useStore({
     isScrolling: false,
     isMobile: false, // Track if device is mobile (<768px)
+    hasScrolledPastHero: false, // Track if scrolled past hero section (100vh)
   });
 
   const isInitialized = useSignal(false); // Track when mobile detection is complete
@@ -50,20 +51,29 @@ export default component$(() => {
       },
       { text: "Reviews", href: "/reviews" },
       { text: "Connections", href: "/connections" },
-            { text: "Contact", href: "/contact" },
-
+      { text: "Contact", href: "/contact" },
     ],
   };
 
   return (
     <header
       id="header"
-      class={`sticky top-0 z-40 flex-none mx-auto max-w-7xl border-primary-200 transition-all ease-in-out ${
+      class={`sticky top-0 z-40 flex-none mx-auto max-w-7xl border-primary-200 transition-all ease-in-out duration-300 ${
+        store.hasScrolledPastHero ? "md:translate-y-0 md:opacity-100" : "md:-translate-y-full md:opacity-0"
+      } ${
         store.isScrolling
           ? "bg-primary-100/95 md:bg-primary-100/80 dark:bg-primary-900/80 md:backdrop-blur-sm"
           : "bg-transparent"
       }`}
       window:onScroll$={() => {
+        const heroHeight = window.innerHeight; // 100vh
+        
+        if (!store.hasScrolledPastHero && window.scrollY >= heroHeight) {
+          store.hasScrolledPastHero = true;
+        } else if (store.hasScrolledPastHero && window.scrollY < heroHeight) {
+          store.hasScrolledPastHero = false;
+        }
+        
         if (!store.isScrolling && window.scrollY >= 10) {
           store.isScrolling = true;
         } else if (store.isScrolling && window.scrollY < 10) {
